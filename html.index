@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen Coder Prompt - Premium LMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        .prompt-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .code-block {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 24px;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #3b82f6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="p-6">
+
+    <div class="prompt-container">
+        <div class="p-8 border-b border-slate-100 bg-slate-50/50">
+            <div class="flex items-center gap-3 mb-2">
+                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full uppercase tracking-wider">High-End Engineering</span>
+            </div>
+            <h1 class="text-3xl font-bold text-slate-900 mb-2">Qwen Coder "Sea Dog" Prompt</h1>
+            <p class="text-slate-600">Copy the code below and paste it directly into Qwen Coder to generate your professional Course Management System.</p>
+        </div>
+
+        <div class="p-8">
+            <div class="relative code-block">
+                <button onclick="copyPrompt()" class="copy-button" id="copyBtn">Copy Prompt</button>
+                <pre id="promptText" class="whitespace-pre-wrap">Act as a Senior Full-Stack Developer and UI/UX Architect. I need you to build a highly modern, professional Course Management Dashboard. 
+
+### TECHNICAL STACK REQUIREMENTS:
+- Format: Single-file HTML5 solution (Production-ready).
+- Styling: Tailwind CSS (via Play CDN).
+- Icons: Lucide Icons.
+- Fonts: "Plus Jakarta Sans" or "Inter".
+- Logic: Vanilla JS/Alpine.js for state (tab switching, modal toggles, search filtering).
+
+### VISUAL DESIGN SYSTEM:
+- Palette: "Deep Midnight" (#0F172A), "Electric Indigo" (#6366F1), and "Ghost White" (#F8FAFC).
+- Aesthetic: Enterprise SaaS. Large border radii (20px+), soft multi-layered shadows, and glassmorphism for the sidebar.
+- Logo/Mascot: The brand is "Sea Dog". Integrate a stylized "Sea Dog" mascot (a dog wearing a captain's hat or nautical gear) using a high-quality SVG or an &lt;img&gt; placeholder that looks aesthetic.
+
+### DASHBOARD COMPONENTS:
+1. Sidebar: Collapsible navigation with active state indicators.
+2. Top Bar: Search input, Notification bell with badge, and User Profile (with Sea Dog avatar).
+3. Stats Row: 4 cards (Total Students, Courses, Completion Rate, Revenue) using micro-animations.
+4. Course Table/Grid: Professional list featuring:
+   - Course Thumbnail
+   - Status badges (Active, Draft, Archived)
+   - Progress bars for student engagement
+   - "Quick Action" buttons (Edit, Analytics, Delete).
+5. "Create Course" Modal: A sleek slide-over form with smooth transitions.
+
+### DEPLOYMENT SPECIFICATIONS:
+- The code must be fully self-contained.
+- All assets (CSS, JS, Fonts) must be linked via secure HTTPS CDNs.
+- Optimize the layout for GitHub Pages deployment.
+
+Ensure the code is clean, semantic, and commented. Build it like a $100k custom LMS platform.</pre>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl border border-slate-200 bg-white">
+                    <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                        <span>🚀</span> Step 1
+                    </h3>
+                    <p class="text-sm text-slate-500 mt-1">Paste the prompt into Qwen Coder and wait for the HTML generation.</p>
+                </div>
+                <div class="p-4 rounded-xl border border-slate-200 bg-white">
+                    <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                        <span>📂</span> Step 2
+                    </h3>
+                    <p class="text-sm text-slate-500 mt-1">Save the output as <b>index.html</b> and upload it to your GitHub repository.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyPrompt() {
+            const text = document.getElementById('promptText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.innerText = 'Copied!';
+                btn.style.background = '#10b981';
+                setTimeout(() => {
+                    btn.innerText = 'Copy Prompt';
+                    btn.style.background = '#3b82f6';
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
